@@ -1,4 +1,4 @@
- body, h1, h2, h3, p {
+body, h1, h2, h3, p {
   margin: 0;
   padding: 0;
 }
@@ -6,15 +6,21 @@
 body {
   background-color: #f5f5f5;
   font-family: Arial, sans-serif;
+  padding-top: 15vh;
+  min-height: 100vh;
 }
 
 header {
   background-color: #333;
   color: #fff;
-  height: 15vh; /* 15% of the viewport height */
+  height: 15vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 nav ul {
