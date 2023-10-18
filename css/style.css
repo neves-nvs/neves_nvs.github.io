@@ -1,8 +1,12 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css);
+
+/* Reset default margins and padding */
 body, h1, h2, h3, p {
   margin: 0;
   padding: 0;
 }
 
+/* Global styles */
 body {
   background-color: #f5f5f5;
   font-family: Arial, sans-serif;
@@ -10,6 +14,7 @@ body {
   min-height: 100vh;
 }
 
+/* Header styles */
 header {
   background-color: #333;
   color: #fff;
@@ -21,10 +26,16 @@ header {
   top: 0;
   width: 100%;
   z-index: 1;
+  transition: height 0.3s;
 }
 
+/* Navigation menu styles */
 nav ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  transition: transform 0.3s, color 0.3s;
 }
 
 nav li {
@@ -38,16 +49,46 @@ nav a {
   font-weight: bold;
 }
 
+/* Hamburger menu button styles */
+.menu-toggle {
+  cursor: pointer;
+  display: none;
+  font-size: 32px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+/* Sidebar styles */
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: #fff;
+  transition: left 0.3s;
+  display: flex;
+  flex-direction: column; /* Stack icons vertically */
+  align-items: center; /* Center icons vertically */
+}
+
+/* Adjust the style of your sidebar icons here */
+.sidebar .icon {
+  font-size: 24px;
+  margin: 10px 0; /* Add vertical spacing between icons */
+}
+
+/* Project and content styles */
 section {
   padding: 20px;
 }
 
-#about {
+#about, .project, #contact {
   background-color: #fff;
 }
 
 .project {
-  background-color: #fff;
   margin: 10px;
   padding: 20px;
   border-radius: 5px;
@@ -59,10 +100,7 @@ section {
   height: auto;
 }
 
-#contact {
-  background-color: #fff;
-}
-
+/* Footer styles */
 footer {
   text-align: center;
   padding: 10px;
@@ -70,22 +108,61 @@ footer {
   color: #fff;
 }
 
+/* Responsive styles */
 @media (max-width: 768px) {
+  /* Adjust header for smaller screens */
+  header {
+    height: 10vh;
+  }
+
   nav ul {
-      text-align: center;
-      margin-top: 10px;
+    text-align: center;
+    margin-top: 10px;
   }
 
   nav li {
-      display: block;
-      margin: 10px 0;
+    display: block;
+    margin: 10px 0;
   }
+
+  /* Show the hamburger menu button */
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+  
 }
 
+/* Hover effects */
 a:hover {
   color: #007bff;
 }
 
 a, .project {
   transition: 0.2s;
+}
+
+/* Menu button hover effect */
+.menu-toggle:hover {
+  transform: scale(1.1);
+  color: #ffcc00;
+}
+
+body {
+  --bg-color: #f5f5f5;
+  --text-color: #000;
+}
+
+/* Night mode styles */
+body.night-mode {
+  --bg-color: #222;
+  --text-color: #fff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }

@@ -3,27 +3,35 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Diogo Neves Website</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="snowflakes.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
 </head>
 
 <body>
     <header>
         <h1>Diogo Ferreira</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="https://github.com/neves-nvs" target="_blank"><i class="fab fa-github"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/neves-diogo/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                
-            </ul>
-        </nav>
+        <div class="sidebar" id="sidebar">
+            <div class="icon"><i class="fas fa-home"></i> Home</div>
+            <div class="icon"><i class="fas fa-user"></i> Me</div>
+            <div class="icon"><i class="fas fa-envelope"></i> Mail</div>
+        </div>
+        <div>
+            <nav>
+                <div class="menu-toggle" id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+                <ul class="nav-links" id="na">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="https://github.com/neves-nvs" target="_blank"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/neves-diogo/" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <section id="about">
@@ -33,6 +41,16 @@
 
     <section id="portfolio">
         <h2>Portfolio</h2>
+        <div class="project">
+            <h3>Project 1</h3>
+            <p>Description of Project 1.</p>
+            <img src="img/placeholder.avif" alt="Project 1">
+        </div>
+        <div class="project">
+            <h3>Project 1</h3>
+            <p>Description of Project 1.</p>
+            <img src="img/placeholder.avif" alt="Project 1">
+        </div>
         <div class="project">
             <h3>Project 1</h3>
             <p>Description of Project 1.</p>
@@ -52,10 +70,11 @@
 
     <footer>
         <p>&copy; 2023 Diogo Neves</p>
-        <a href="https://www.flaticon.com/free-icons/cold" title="cold icons">Cold icons created by Freepik - Flaticon</a>
+        <a href="https://www.flaticon.com/free-icons/cold" title="cold icons">Cold icons created by Freepik -
+            Flaticon</a>
     </footer>
 
-
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
