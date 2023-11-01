@@ -3,77 +3,72 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Diogo Neves Website</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Diogo Ferreira</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="snowflakes.png" type="image/x-icon">
-
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body>
-    <header>
-        <h1>Diogo Ferreira</h1>
-        <div class="sidebar" id="sidebar">
-            <div class="icon"><i class="fas fa-home"></i> Home</div>
-            <div class="icon"><i class="fas fa-user"></i> Me</div>
-            <div class="icon"><i class="fas fa-envelope"></i> Mail</div>
-        </div>
-        <div>
+<body class="font-sans">
+
+    <header class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto flex items-center justify-between">
+            <h1 class="text-2xl font-bold">Diogo Ferreira</h1>
             <nav>
-                <div class="menu-toggle" id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
-                <ul class="nav-links" id="na">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="https://github.com/neves-nvs" target="_blank"><i class="fab fa-github"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/neves-diogo/" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                        </a></li>
+                <ul class="hidden md:flex space-x-6">
+                    <li><a href="#about" class="hover:text-gray-300">About</a></li>
+                    <li><a href="#portfolio" class="hover:text-gray-300">Portfolio</a></li>
+                    <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
+                    <li><a href="https://github.com/neves-nvs" target="_blank" class="hover:text-gray-300"><i
+                                class="fab fa-github"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/neves-diogo/" target="_blank"
+                            class="hover:text-gray-300"><i class="fab fa-linkedin"></i></a></li>
                 </ul>
             </nav>
+            <div class="md:hidden">
+                <!-- Hamburger menu button for smaller screens -->
+                <button id="menu-toggle" class="text-3xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Cibersecurity and Distributed Systems Master's Student</p>
-    </section>
+    <main class="container mx-auto mt-8">
+        <section id="about" class="primary-bg p-6 rounded shadow-md mb-8">
+            <h2 class="text-2xl font-bold mb-4">About Me</h2>
+            <p>Cybersecurity and Distributed Systems Master's Student</p>
+        </section>
 
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of Project 1.</p>
-            <img src="img/placeholder.avif" alt="Project 1">
-        </div>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of Project 1.</p>
-            <img src="img/placeholder.avif" alt="Project 1">
-        </div>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of Project 1.</p>
-            <img src="img/placeholder.avif" alt="Project 1">
-        </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>Description of Project 2.</p>
-            <img src="project2.jpg" alt="Project 2">
-        </div>
-    </section>
+        <section id="portfolio" class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Portfolio</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Your portfolio projects here -->
+                <div class="primary-bg bg-white p-4 rounded shadow-md">
+                    <h3 class="text-lg font-bold mb-2">Project 1</h3>
+                    <p>Description of Project 1.</p>
+                    <img src="img/placeholder.avif" alt="Project 1" class="mt-4 w-full">
+                </div>
+                <!-- Repeat for other projects -->
+            </div>
+        </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>You can reach me at: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-    </section>
+        <section id="contact" class="primary-bg p-6 rounded shadow-md">
+            <h2 class="text-2xl font-bold mb-4">Contact Me</h2>
+            <p>You can reach me at: <a href="mailto:youremail@example.com"
+                    class="text-blue-500">youremail@example.com</a></p>
+        </section>
+    </main>
 
-    <footer>
+    <footer class="bg-gray-800 text-white text-center py-2 mt-8">
         <p>&copy; 2023 Diogo Neves</p>
-        <a href="https://www.flaticon.com/free-icons/cold" title="cold icons">Cold icons created by Freepik -
-            Flaticon</a>
+        <a href="https://www.flaticon.com/free-icons/cold" title="cold icons" class="text-gray-300">Cold icons created
+            by Freepik - Flaticon</a>
     </footer>
 
+    <!-- Your JavaScript and other scripts -->
     <script src="./js/sidebar.js"></script>
 </body>
 
