@@ -1,4 +1,7 @@
 /* styles.css */
+/* * {
+  outline: 1px solid blueviolet;
+} */
 
 :root {
   /* Light Mode */
@@ -7,11 +10,17 @@
 
   --primary-light-text: #333333;
 
+  --primary-light-accent-color: #ff0000;
+  --secondary-light-accent-color: #00ff00;
+
   /* Dark Mode */
   --primary-dark-bg: #333333;
   --primary-dark-text: #ffffff;
 
   --secondary-dark-bg: #222222;
+
+  --primary-dark-accent-color: #de4a4a;
+  --secondary-dark-accent-color: #6bf06b;
 }
 
 /* Dark mode styles */
@@ -20,6 +29,8 @@
     --primary-bg: var(--primary-dark-bg);
     --secondary-bg: var(--secondary-dark-bg);
     --primary-text: var(--primary-dark-text);
+    --accent-color: var(--primary-dark-accent-color);
+    --secondary-accent-color: var(--secondary-dark-accent-color);
   }
 }
 
@@ -28,6 +39,8 @@
     --primary-bg: var(--primary-light-bg);
     --secondary-bg: var(--secondary-light-bg);
     --primary-text: var(--primary-light-text);
+    --accent-color: var(--primary-light-accent-color);
+    --secondary-accent-color: var(--secondary-light-accent-color);
   }
 }
 
@@ -39,4 +52,9 @@ body {
 .primary-bg {
   background-color: var(--primary-bg);
   color: var(--primary-text);
+}
+
+.accent-color {
+  background-color: var(--accent-color);
+
 }
