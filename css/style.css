@@ -10,7 +10,7 @@
 
   --primary-light-text: #333333;
 
-  --primary-light-accent-color: #ff0000;
+  --primary-light-accent-color: #0048ff;
   --secondary-light-accent-color: #00ff00;
 
   /* Dark Mode */
@@ -19,7 +19,7 @@
 
   --secondary-dark-bg: #222222;
 
-  --primary-dark-accent-color: #de4a4a;
+  --primary-dark-accent-color: #5e4ade;
   --secondary-dark-accent-color: #6bf06b;
 }
 
