@@ -5,86 +5,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Diogo Ferreira</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="snowflakes.png" type="image/x-icon">
-    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- TailwindCSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    <!-- localization -->
+    <script defer src="https://cdn.jsdelivr.net/npm/i18next@21.7.0/dist/umd/i18next.min.js"></script>
+    <script defer
+        src="https://cdn.jsdelivr.net/npm/i18next-xhr-backend@3.2.2/dist/umd/i18nextXHRBackend.min.js"></script>
+    <script defer
+        src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@3.0.0/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icon-css/css/flag-icon.min.css">
+
+    <!-- Scripts -->
+    <script defer src="js/i18n.js"></script>
+    <!-- <script defer src="js/sidebar.js"></script> -->
+    <script defer src="js/darkmode.js"></script>
+
+    <!-- Style -->
+    <link href="./css/reset.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/card.css" rel="stylesheet">
 </head>
 
 <body class="font-sans">
+    <!-- Navigation Bar -->
+    <header class="bg-white shadow">
+        <div class="container mx-auto flex justify-between items-center py-4 px-8">
+            <div class="text-2xl font-semibold text-black">Diogo Neves Ferreira</div>
+            <div class="flex space-x-4 items-center">
+                <a href="/" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 font-bold">Home</a>
+                <a href="#projects" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 font-bold">Projects</a>
+                <!-- <a href="" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 font-bold">Curriculum</a> -->
+                <!-- <a href="#contact" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 font-bold">Contact</a> -->
 
-    <header class="accent-color fixed w-full top-0 py-4">
-        <div class="mx-10 flex items-center justify-between">
-            <a href="/">
-                <h1 class="text-2xl font-bold">Diogo Ferreira</h1>
-            </a>
-            <nav>
-                <ul class="hidden md:flex space-x-8">
-                    <li>
-                        <a href="https://github.com/neves-nvs" target="_blank" class="hover:text-gray-300">
-                            <i class="fab fa-github fa-2xl"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/neves-diogo/" target="_blank" class="hover:text-gray-300">
-                            <i class="fab fa-linkedin fa-2xl"></i>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="md:hidden">
-                <!-- Hamburger menu button for smaller screens -->
-                <button id="menu-toggle" class="text-3xl">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <select id="languageSelect" class="transition-colors hover:bg-purple-600 rounded-lg bg-indigo-800">
+                    <option value="en">English</option>
+                    <option value="pt">Português</option>
+                </select>
+
+                <!-- <button class="text-gray-600 dark:text-white w-7" onclick="toggleDarkMode()">
+                    <i class="fas fa-sun fa-xl" id="sun-icon"></i>
+                    <i class="fas fa-moon fa-xl" id="moon-icon" style="display: none;"></i>
+                </button> -->
             </div>
         </div>
     </header>
 
-    <main class="mx-20 mt-8 pt-16">
-        <section id="about" class="primary-bg p-6 rounded shadow-md mb-8">
-            <h2 class="text-2xl font-bold mb-4">About Me</h2>
-            <p>Cybersecurity and Distributed Systems Master's Student</p>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero-section bg-indigo-900 dark:bg-gray-700 text-white dark:text-white py-32">
+        <div class="container mx-auto text-center flex flex-col items-center">
+            <h1 class="text-4xl font-bold mb-4" data-i18n="hero_title"></h1>
+            <p class="text-lg" data-i18n="hero_content"></p>
+            <div class="mt-6 flex items-center justify-center space-x-4">
+                <!-- <button
+                    class="bg-white dark:bg-gray-300 text-indigo-900 dark:text-gray-900 font-semibold px-6 py-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600"
+                    data-i18n="hero_button">
+                </button> -->
+                <div class="flex space-x-2">
+                    <a href="https://www.linkedin.com/in/neves-diogo/" target="_blank" class="hover:text-gray-300">
+                        <i class="fab fa-linkedin fa-2xl"></i>
+                    </a>
 
-        <section id="portfolio" class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">Portfolio</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Your portfolio projects here -->
-                <div class="primary-bg bg-white p-4 rounded shadow-md">
-                    <h3 class="text-lg font-bold mb-2">Project 1</h3>
-                    <p>Description of Project 1.</p>
-                    <img src="img/placeholder.avif" alt="Project 1" class="mt-4 w-full">
+                    <a href="https://github.com/neves-nvs" target="_blank" class="hover:text-gray-300">
+                        <i class="fab fa-github fa-2xl"></i>
+                    </a>
                 </div>
-                <div class="primary-bg bg-white p-4 rounded shadow-md">
-                    <h3 class="text-lg font-bold mb-2">Project 1</h3>
-                    <p>Description of Project 1.</p>
-                    <img src="img/place.jpg" alt="Project" class="mt-4 w-full">
-                </div>
-                <div class="primary-bg bg-white p-4 rounded shadow-md">
-                    <h3 class="text-lg font-bold mb-2">Project 1</h3>
-                    <p>Description of Project 1.</p>
-                    <img src="img/download.png" alt="Projects" class="mt-4 w-full">
-                </div>
-                <!-- Repeat for other projects -->
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contact" class="primary-bg p-6 rounded shadow-md">
-            <h2 class="text-2xl font-bold mb-4">Contact Me</h2>
-            <p>You can reach me at: <a href="mailto:youremail@example.com"
-                    class="text-blue-500">youremail@example.com</a></p>
-        </section>
-    </main>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8" data-i18n="projects_title"></h2>
+            <div class="card-container">
 
-    <footer class="accent-color text-white text-center py-2 mt-8">
-        <p>&copy; 2023 Diogo Neves</p>
-        <a href="https://www.flaticon.com/free-icons/cold" title="cold icons" class="text-gray-300">Cold icons created
+                <div class="card bg-white dark:bg-gray-700 text-gray-800 dark:text-white">
+                    <img src="img/website-laptop.png" alt="This Website">
+                    <div class="overlay">
+                        <div class="technologies">
+                            <i class="fab fa-html5"></i>
+                            <i class="fab fa-css3-alt"></i>
+                            <i class="fab fa-js"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="text-lg font-semibold">This Website</h3>
+                        <p>The Website you are seeing right now.</p>
+                    </div>
+                </div>
+
+                <div class="card bg-white dark:bg-gray-700 text-gray-800 dark:text-white">
+                    <img src="img/santorini.webp" alt="This Website">
+                    <div class="overlay">
+                        <div class="technologies">
+                            <i class="fab fa-html5"></i>
+                            <i class="fab fa-css3-alt"></i>
+                            <i class="fab fa-js"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="text-lg font-semibold">Santorini</h3>
+                        <p>A web version of the board game Santorini</p>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-200 dark:bg-gray-800 text-gray-800">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center">About Me</h2>
+            <p class="text-lg text-center">
+                22 years old, born and raised in Portugal. I'm currently taking my Masters in Computer Science and
+                Engineering at the Instituto Superior Técnico, University of Lisbon.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6" data-i18n="contact_title"></h2>
+            <p class="text-lg mb-8" data-i18n="contact_content">
+
+            </p>
+            <button
+                class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300"
+                onclick="redirectToEmail()">
+                Email Me
+            </button>
+            <script>
+                function redirectToEmail() {
+                    const emailAddress = 'diogonevesf@tecnico.ulisboa.pt'; // Replace with your email address
+                    window.location.href = `mailto:${emailAddress}`;
+                }
+            </script>
+
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-500 text-white text-center py-8">
+        <p>&copy; 2023 Diogo Neves Ferreira</p>
+        <a href="https://www.flaticon.com/free-icons/cold" title="cold icons">Cold icons
+            created
             by Freepik - Flaticon</a>
     </footer>
 
-    <!-- Your JavaScript and other scripts -->
-    <script src="./js/sidebar.js"></script>
+
 </body>
+
 
 </html>

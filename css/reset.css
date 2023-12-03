@@ -1,0 +1,15 @@
+select {
+    appearance: none;
+    padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+    /* Added padding-right to accommodate the icon */
+    border: 1px solid #e2e8f0;
+    /* Adjust as needed */
+    border-radius: 0.25rem;
+    background-image: url('https://cdn.jsdelivr.net/gh/encharm/Font-Awesome-SVG-PNG/white/svg/chevron-down.svg');
+    /* White dropdown icon URL */
+    background-position: right 0.5rem top 50%;
+    background-repeat: no-repeat;
+    background-size: 0.8em;
+    vertical-align: middle;
+    /* Adjust the size of the icon as needed */
+}
